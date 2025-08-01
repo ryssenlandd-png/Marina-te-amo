@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  background: linear-gradient(#ffe0f0, #ffc2d1);
+  overflow: hidden;
+  font-family: 'Arial', sans-serif;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.cat {
+  font-size: 60px;
+  position: absolute;
+  bottom: 30px;
+  animation: bounce 1s infinite alternate;
+}
+
+.left-cat {
+  left: 30px;
+}
+
+.right-cat {
+  right: 30px;
+  transform: scaleX(-1);
+}
+
+#hearts-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.heart {
+  position: absolute;
+  font-size: 24px;
+  animation: fly 4s linear forwards;
+  color: red;
+}
+
+@keyframes fly {
+  0% { opacity: 0; transform: translateY(0); }
+  50% { opacity: 1; }
+  100% { transform: translateY(-100vh) scale(0.5); opacity: 0; }
+}
+
+@keyframes bounce {
+  from { transform: translateY(0); }
+  to { transform: translateY(-10px); }
+}
+
+#message {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  opacity: 0;
+  animation: showMessage 1s ease-in-out 5s forwards;
+}
+
+#message h1 {
+  font-size: 48px;
+  color: #d10068;
+  text-shadow: 2px 2px #fff;
+}
+
+.big-heart {
+  font-size: 80px;
+  margin-top: 10px;
+  animation: beat 1s infinite;
+}
+
+@keyframes showMessage {
+  to { opacity: 1; }
+}
+
+@keyframes beat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
